@@ -1,0 +1,850 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    width: 100%;
+    height: 100%;
+    max-width:100vw;
+    max-height: 100vh;
+}
+body{
+    width: 100%;
+    max-width: 100vw;
+    height: 100%;
+    max-height: 100vh;
+    overflow: hidden;
+    background-image: url('./images/background.avif');
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+
+    font-family: 'Nunito', sans-serif;
+}
+main{
+    width: 100%;
+    height: 100%;
+    padding: 0 1rem;
+
+}
+main h1{
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 15px auto;
+    color: whitesmoke;
+    background-color: rgba(0, 0, 0, 0.8);
+    visibility: hidden;
+}
+/* Grid container */
+/* main .grid-container{
+    height: 80vh;
+    width: 100%;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+.grid-container section{
+    padding: 1rem;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+.grid-container{
+    width: 50%;
+    max-width: 700px;
+    height: 30%;
+    max-height: 500px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 2rem;
+}
+.grid-container section{
+    width: 30%;
+    max-width: 150px;
+    height: 50%;
+    max-height: 150px;
+    margin: 0 2rem;
+}
+.grid-container section .directory{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: auto;
+    min-width: 200px;
+    gap: 1rem;
+    border-radius: 10px;
+    border: transparent;
+}
+.grid-container .directory button:hover{
+    cursor: pointer;
+    color: firebrick;
+}
+.grid-container .directory button:hover{
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.grid-container section .directory h2{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.grid-container section .directory button{
+    padding: 0.5rem 1rem;
+    background: transparent;
+    border: transparent;
+}
+/* .grid-container section .directory button i{
+    font-size: 2rem;
+} */
+
+/* Modals */
+#modal, 
+#modal2, 
+#modal3,
+#modal4,
+#modal5,
+#modal6{
+    /* border: 1px solid;
+    height: 90%;
+    width: 100%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0; */
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 90%;
+    overflow: hidden;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4);
+
+}
+#modal .modal-content, 
+#modal2 .modal-content2, 
+#modal3 .modal-content3,
+#modal4 .modal-content4,
+#modal5 .modal-content5,
+#modal6 .modal-content6{
+    height: 97%;
+    max-height: 1000px;
+    width: 100%;
+    max-width: 60%;
+    background-color: white;
+    border-radius: 5px;
+    position: relative;
+    margin: 0 auto;
+    top: 2%;
+    padding: 0;
+    cursor:initial;
+    border: 3px solid rgb(247, 162, 72);
+    background-color: rgb(247, 162, 72);
+    overflow: hidden;
+
+}
+#modal .modal-content .content, 
+#modal2 .modal-content2 .content2, 
+#modal3 .modal-content3 .content3{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
+    gap: 0 1rem;
+    border-top: 1px solid rgb(199, 122, 45);
+    height:90%;
+    max-height: 1000px;
+    padding: 2rem 1rem;
+    overflow: auto;
+    background-color: whitesmoke;
+    background-color: rgb(246, 244, 218);
+}
+
+#modal4 .modal-content4 .content4,
+#modal5 .modal-content5 .content5,
+#modal6 .modal-content6 .content6{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 2rem;
+    height:90%;
+    max-height: 1000px;
+    width: 100%;
+    border-top: 1px solid rgb(199, 122, 45);
+    padding: 2rem 1rem 4rem 1rem;
+    overflow-y: auto;
+    background-color: whitesmoke;
+    background-color: rgb(246, 244, 218);
+
+
+}
+.content div, 
+.content2 div, 
+.content3 div{
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: 700;
+    height: 30%;
+    width: 100%;
+    padding-bottom: 2rem;
+    width: 100%;
+    max-height: 500px;
+}
+.content4 div,
+.content5 div,
+.content6 div{
+    /* border: 1px solid; */
+    width: 100%;
+    height: 100%;
+    max-height: 500px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    padding: 0 1rem;
+
+}
+.content4 .info,
+.content5 .info,
+.content6 .info{
+    margin-top: -2rem;
+    font-size: 20px !important;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    max-height: 500px;
+}
+.content4 div h3,
+.content5 div h3,
+.content6 div h3{
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-top: 1rem;
+}
+.content4 div a{
+    font-size: 1.5rem;
+    text-decoration:underline !important; 
+}
+.content div a, 
+.content2 div a, 
+.content3 div a,
+.content4 div a{
+    text-decoration: none;
+    text-align: center;
+    margin-top: 1rem;
+}
+.content div a:hover, 
+.content2 div a:hover, 
+.content3 div a:hover,
+.content4 div a:hover{
+    color: rgb(242, 48, 48);
+}
+.content div img, 
+.content2 div img, 
+.content3 div img,
+.content4 div img{
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+
+#modal button#modal-btn, 
+#modal2 button#modal-btn2, 
+#modal3 button#modal-btn3,
+#modal4 button#modal-btn4,
+#modal5 button#modal-btn5,
+#modal6 button#modal-btn6,
+#close-spotify,
+#close-browser{
+    font-size: 15px;
+    font-weight: 800;
+    color: aliceblue;
+    background-color: firebrick;
+    border-radius: 5px;
+    display: block;
+    margin: 5px 5px 5px auto;
+}
+#modal button#modal-btn:hover, 
+#modal2 button#modal-btn2:hover, 
+#modal3 button#modal-btn3:hover,
+#modal4 button#modal-btn4:hover,
+#modal5 button#modal-btn5:hover,
+#modal6 button#modal-btn6:hover,
+#close-spotify:hover,
+#close-browser:hover{
+    cursor: pointer;
+    background-color: rgb(246, 104, 104);
+}
+/* Start tab */
+#start-tab{
+    width: 100%;
+    max-width: 650px;
+    height: 100%;
+    max-height: 800px;
+    border: 1px solid black;
+    background: white;
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    display: none;
+    background-color: rgba(65, 105, 225, 0.95);
+}
+@keyframes fadingIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadingIn 0.25s forwards;
+}
+
+#start-container{
+    border: 1px solid black;
+    width: 130px;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#start-container button{
+    border: 1px solid black;
+    width: 100%;
+    max-width: 130px;
+    height: 100px;
+    max-height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+#start-container button i{
+    font-size: 3rem;
+    color:rgb(210, 205, 243);
+}
+
+#power-options{
+    display: none;
+}
+
+
+
+
+#power-options div{
+    width: 100%;
+    height: 50%;
+    max-height: 200px;
+    position: absolute;
+    bottom: 100px;
+    left: 0;
+    font-size: 3rem;
+    border: 1px solid black;
+    background-color: rgba(0,0,0,0.9);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+#power-options div i{
+    width: auto;
+    margin: 2rem;
+    padding: 2rem;
+    color: whitesmoke;
+    border: 1px solid;
+
+}
+
+.box-others{
+    border: 1px solid black;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 70%;
+    max-width: 800px;
+    height: 350px;
+    max-height: 500px;
+}
+.box{
+    max-width: 150px;
+    max-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+    font-size: 20px;
+    font-weight: 800;
+    color: whitesmoke;
+}
+#start-container button:hover,
+.box:hover,
+#power-options div i:hover{
+    cursor: pointer;
+    background-color: rgb(138, 165, 241);
+}
+.box img{
+    width: 80%;
+    height: 80%;
+}
+
+#loader {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 120px;
+    height: 120px;
+    margin: -76px 0 0 -76px;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
+  
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Add animation to "page content" */
+  .animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
+  }
+  
+  @-webkit-keyframes animatebottom {
+    from { bottom:-100px; opacity:0 } 
+    to { bottom:0px; opacity:1 }
+  }
+  
+  @keyframes animatebottom { 
+    from{ bottom:-100px; opacity:0 } 
+    to{ bottom:0; opacity:1 }
+  }
+  
+.show{
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    color: whitesmoke;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    color: whitesmoke;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+  
+  #black-screen {
+    display: none;
+    text-align: center;
+
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    color: whitesmoke;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    color: whitesmoke;
+    background-color: rgb(0, 0, 0);
+    font-size: 2rem;
+    padding: 10%;
+  }
+/* Browser */
+#browser{
+    height: 100% !important;
+    max-height: 70vh !important;
+    /* display: none !important; */
+    display: none;
+    border-radius: 5px;
+    background-color: transparent;
+    position: absolute;
+    top: 5%;
+    left: 15%;
+    width: 100%;
+    max-width: 60vw;
+    height: auto;
+}
+#browser-container{
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: whitesmoke;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.browser-modal{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    border-top: 1px solid black;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+.refresh{
+    width: 100%;
+    height: auto;
+    font-size: 1.5rem;
+    text-align: center;
+    z-index: 1;
+}
+.game{
+    width: 600px;
+    /* max-width: 600px; */
+    height: 200px;
+    /* max-height: 200px; */
+    border-bottom: 1px solid black;
+    display: block;
+    margin: 0 auto;
+}
+#dino{
+    width: 70px;
+    height: 70px;
+    background-image: url(images/dino.png);
+    background-size: auto 70px;
+    background-repeat: no-repeat;
+    position: relative;
+    top: 143px;
+}  
+.jump {
+    animation: jump 0.5s linear;
+}
+@keyframes jump {
+    0% {
+        top: 143px; /*distance from the top of the parent element*/
+    }
+    20% {
+        top: 40px;
+    }
+    30% {
+        top: 15px;
+    }
+    40% {
+        top: 5px;
+    }
+    50% {
+        top: 1px;
+    }
+    60% {
+        top: 15px;
+    }
+    80% {
+        top: 40px
+    }
+    100% {
+        top: 143px;
+    }
+}
+
+#cactus{
+    width: 50px;
+    height: 60px;
+    position: relative;
+    top: 85px;
+    left: 580px;
+    background-image: url(images/Cactus-Clipart.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+    animation: cactus-block 1.5s infinite linear;
+}
+@keyframes cactus-block {
+    0% {
+        left: 600px;
+    }
+    100% {
+        left: -20px;
+    }
+}
+
+.counter-div{
+    width: 100%;
+    height: 3rem; 
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Spotify */
+#player-container{
+    display: block;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 50px;
+    top: 50px;
+    width: 70%;
+    height: auto;
+    overflow: hidden;
+    background-color: whitesmoke;
+    border: 1px solid black;
+
+}
+
+#spotify{
+    border-radius: 5px;
+    background-color: white;
+    display: none;
+    position: absolute;
+    top: 5%;
+    left: 15%;
+    width: 100%;
+    max-width: 60vw;
+    height: auto;
+    /* max-height: 20vh; */
+}
+
+#close-spotify,
+#close-browser{
+    width: 40px;
+    height: 40px;
+}
+
+.player{
+    width: 100%;
+    height: auto;
+    /* max-height: 40vh; */
+    border-top: 1px solid black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: lightgreen;
+    transition: background-color .5s;
+}
+.details {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    /* margin-top: 25px; */
+}
+.track-art {
+    /* margin: 25px; */
+    height: 200px;
+    width: 200px;
+    background-image: URL(
+       "https://source.unsplash.com/Qrspubmx6kE/640x360");
+    background-size: cover;
+    background-position: center;
+    border-radius: 15%;
+}
+.now-playing {
+    font-size: 1rem;
+}
+.track-name {
+    font-size: 3rem;
+}
+   
+.track-artist {
+    font-size: 1.5rem;
+}
+.buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+.play-pause,
+.prev-track,
+.next-track {
+  padding: 25px;
+  opacity: 0.8;
+ 
+  /* Smoothly transition the opacity */
+  transition: opacity .2s;
+}
+.play-pause:hover,
+.prev-track:hover,
+.next-track:hover {
+  opacity: 1.0;
+}
+.slider-container {
+    width: 75%;
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.time-slider, .volume-slider {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 5px;
+    background: black;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+.time-slider::-webkit-slider-thumb,
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: white;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.time-slider:hover,
+.volume-slider:hover {
+  opacity: 1.0;
+}
+ 
+.time-slider {
+  width: 60%;
+}
+ 
+.volume-slider {
+  width: 30%;
+}
+ 
+.current-time,
+.total-duration {
+  padding: 10px;
+}
+ 
+i.fa-volume-down,
+i.fa-volume-up {
+  padding: 10px;
+}
+i.fa-play-circle,
+i.fa-pause-circle,
+i.fa-step-forward,
+i.fa-step-backward {
+  cursor: pointer;
+}
+ 
+
+
+/* Footer */
+
+footer{
+    width: 100%;
+    height:10vh;
+    display: flex;
+    gap: 1rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    bottom: 0;
+}
+.start-icon button, 
+.toolbar-icon button{
+    background: transparent;
+    border: none;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.button-active{
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid whitesmoke;
+}
+.button-inactive{
+    background-color: transparent;
+    border: none;
+}
+
+.start-icon button i, 
+.toolbar-icon button i{
+    color: whitesmoke;
+    font-size: 100%;
+}
+
+footer #start{
+    width: 10%;
+    height: 100%;
+}
+footer #start .fa{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer .start-icon{
+    width: 100%;
+    height: 100%;
+
+}
+footer #toolbar{
+    width: 95%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+}
+footer .toolbar-icon{
+    height: 100%;
+    width: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer .toolbar-icon button:hover, 
+footer .start-icon button:hover{
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+footer .toolbar-icon button, 
+footer .start-icon button{
+    height: 100%;
+    width: 100%;
+}
+
+footer .toolbar-icon button i, 
+footer #start .start-icon button i{
+    font-size: 2.5rem;
+}
