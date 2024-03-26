@@ -1,5 +1,5 @@
 const closeBtn = document.getElementById('modal-btn');
-const modal = document.getElementById('modal');
+const modal1 = document.getElementById('modal1');
 const fccBtn = document.getElementById('fcc-btn');
 
 const closeBtn2 = document.getElementById('modal-btn2');
@@ -57,10 +57,10 @@ const cactus = document.getElementById("cactus");
 // Open/close Folders
 const getFcc = () => {       
     fccBtn.ondblclick = function() {
-        modal.style.display = 'block';
+        modal1.style.display = 'block';
     }
     closeBtn.onclick = function() {
-        modal.style.display = 'none';
+        modal1.style.display = 'none';
     }
 }
 
@@ -204,16 +204,18 @@ const getDinoGame = () => {
     });    
 }
 
+const browser = document.getElementById('browser-container');
 const getDino = () => {
     const browserIcon = document.getElementById('browser-icon');
     // delay style for 2.5s
-    browserBtn.onclick = function() {
+    
+    browserBtn.onclick = () => {
         setTimeout(() => {
             browserContainer.style.display = 'block';
         }, 2500);
     }
     // close player and change toolbar icon style
-    closeBrowser.onclick = function() {
+    closeBrowser.onclick = () => {
         browserContainer.style.display = 'none';
         if(browserIcon.classList.contains('button-active')){
             browserIcon.classList.remove('button-active');
@@ -221,6 +223,19 @@ const getDino = () => {
     }
     getDinoGame();
 }
+
+const focusGroup = () => {
+    
+    browserContainer.onclick = () => {
+        browser.style.zIndex = '1';
+        playerContainer.style.zIndex = '0';
+    }
+    playerContainer.onclick = () => {
+        playerContainer.style.zIndex = '1';
+        browser.style.zIndex = '0';
+    }
+}
+focusGroup();
 
 
 // Spotify
