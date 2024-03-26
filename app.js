@@ -164,6 +164,46 @@ function getReset() {
 }
 
 // Browser
+
+const getDinoGame = () => {
+    function jump(){
+        const counter = document.getElementById('counter');
+        const num = parseInt(counter.innerHTML);
+        if(dispatchEvent.classList != 'jump'){
+            // check if dino is mid-jump, if not it makes dino jump
+            dino.classList.add('jump');
+            setTimeout(() => {
+                // remove jump class so it can jump again
+                dino.classList.remove('jump');
+            }, 420);
+        }
+        return counter.innerHTML = num + 1;
+    }
+    
+    let checkAlive = setInterval(() => {
+        const counterDiv = document.getElementById('counter-div');
+        let dinoTop = parseInt(
+            window.getComputedStyle(dino).getPropertyValue('top')
+        );
+        let cactusLeft = parseInt(
+            window.getComputedStyle(cactus).getPropertyValue('left')
+        );
+    
+        if(cactusLeft > 0 && cactusLeft < 10 && dinoTop >= 50){
+            cactus.style.animationPlayState = 'paused';
+            counter.textContent = '0';
+            alert(`You lost! Press space to play again.`)
+            // counterDiv.textContent = `You lost! Press space to play again.`;
+        }
+    }, 10);
+    document.addEventListener('keydown', (e) => {
+        if(e.key == " " || e.code == "space"){
+            cactus.style.animationPlayState = 'running';
+            jump();
+        }
+    });    
+}
+
 const getDino = () => {
     const browserIcon = document.getElementById('browser-icon');
     // delay style for 2.5s
@@ -179,47 +219,9 @@ const getDino = () => {
             browserIcon.classList.remove('button-active');
         }
     }
-}
-function jump(){
-    const counter = document.getElementById('counter');
-    const num = parseInt(counter.innerHTML);
-    
-    if(dispatchEvent.classList != 'jump'){
-        // check if dino is mid-jump, if not it makes dino jump
-        dino.classList.add('jump');
-        setTimeout(() => {
-            // remove jump class so it can jump again
-            dino.classList.remove('jump');
-        }, 420);
-    }
-    return counter.innerHTML = num + 1; 
+    getDinoGame();
 }
 
-let checkAlive = setInterval(() => {
-    
-    let dinoTop = parseInt(
-        window.getComputedStyle(dino).getPropertyValue('top')
-    );
-    let cactusLeft = parseInt(
-        window.getComputedStyle(cactus).getPropertyValue('left')
-    );
-
-    if(cactusLeft > 0 && cactusLeft < 15 && dinoTop >= 100){
-        dino.style.animationPlayState = 'paused';
-        cactus.style.animationPlayState = 'paused';
-        alert('Whoooooops! Game over :(');
-        // window.location.reload();
-        dino.style.animationPlayState = 'inherit';
-        cactus.style.animationPlayState = 'inherit';
-        counter.textContent = '0'; 
-    }
-
-}, 10);
-document.addEventListener('keydown', (e) => {
-    if(e.key == " " || e.code == "Space"){
-        jump();
-    }
-});
 
 // Spotify
 const getPlayer = () => {
@@ -236,6 +238,7 @@ const getPlayer = () => {
         if(playerIcon.classList.contains('button-active')){
             playerIcon.classList.remove('button-active');
         }
+        pauseTrack();
     }
 }
 
