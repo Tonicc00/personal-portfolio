@@ -896,6 +896,16 @@ footer #start .start-icon button i{
         font-size: 10px;
         margin-top: 0;
     }
+    /* #browser-container{
+        max-width: 280px;
+    } */
+    #spotify{
+        left:17%;
+        width: 280px;
+    }
+    #player-container{
+        max-width: 80%;
+    }
     footer{
         width: 100vw;
         display: flex;
@@ -965,6 +975,9 @@ footer #start .start-icon button i{
     .grid-container section .directory h2{
         font-size: 10px;
     }
+    #browser{
+        max-width: 80vw;
+    }
     footer{
         width: 100vw;
     }
@@ -1032,18 +1045,22 @@ footer #start .start-icon button i{
     .grid-container section .directory h2{
         font-size: 10px;
     }
+    #browser{
+        max-width: 100vw;
+    }
     #browser-container{
-        width: 320px;
-        max-width: 320px;
+        width: 100%;
+        max-width: 280px;
         height: 90vh;
+        /* max-height: 90vh; */
         position: absolute;
         margin-left: 27%;
         top: -11%;
         overflow: hidden;
         padding: 0 0 2rem 0;
     }
-    #browser-container, #player-container {
-        width: 85%;
+    #player-container {
+        width: 100%;
         max-width: 300px;
         height: 80vh;
         position: absolute;
@@ -1129,7 +1146,7 @@ footer #start .start-icon button i{
         left: 0;
         top: 25%;
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         align-items: center;
     }
     #black-screen{
