@@ -15,20 +15,14 @@ html{
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    height: 100%;
     overflow: hidden;
 }
 body{
-    width: 100vw;
-    /* max-width: 100vw; */
+    width: 100%;
+    max-width: 100vw;
     height: 100vh;
-    /* max-height: 100vh; */
-    overflow: hidden;
-    /* background-image: url('./images/background.avif');
-    background-repeat: no-repeat;
-    background-size:cover;
-    background-position:center; */
     font-family: 'Nunito', sans-serif;
+    overflow: hidden;
 }
 main{
     width: 100%;
@@ -137,7 +131,7 @@ main h1{
     height: 97%;
     max-height: 1000px;
     width: 100%;
-    max-width: 60%;
+    max-width: 100vh;
     background-color: white;
     border-radius: 5px;
     position: relative;
@@ -373,7 +367,7 @@ main h1{
     border: 1px solid;
 
 }
-
+/* 
 .box-others{
     z-index: 0;
     position: absolute;
@@ -385,6 +379,17 @@ main h1{
     max-width: 800px;
     height: 350px;
     max-height: 500px;
+} */
+.box-others {
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 70%;
+    max-width: 800px;
+    height: 150px;
 }
 .box{
     max-width: 150px;
@@ -531,7 +536,7 @@ main h1{
 .refresh{
     width: 100%;
     height: auto;
-    font-size: 1.5rem;
+    font-size: 1rem;
     text-align: center;
     z-index: 1;
 }
@@ -606,8 +611,8 @@ main h1{
 
 #counter-div{
     width: 100%;
-    height: 3rem; 
-    font-size: 2rem;
+    /* height: 3rem;  */
+    font-size: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -626,6 +631,7 @@ main h1{
     background-color: white;
     border: 5px solid rgb(247, 162, 72);
     border-radius: 15px;
+    padding-bottom: 2rem;
 }
 
 #spotify{
@@ -851,7 +857,7 @@ footer #start .start-icon button i{
     font-size: 2.5rem;
 }
 
-@media only screen and (max-width: 321px){
+@media only screen and (max-width: 320px){
     main{
         width: 100%;
         max-width: 320px;
@@ -898,6 +904,8 @@ footer #start .start-icon button i{
     
     #start-tab {
         left: 29%;
+        top: 12% !important;
+        
         display: flex;
         align-items: flex-start;
         height: auto;
@@ -924,6 +932,9 @@ footer #start .start-icon button i{
         width: 15%;
         padding: 0 10px;
 
+    }
+    #loader{
+        left: 12rem !important;
     }
 
 }
@@ -979,6 +990,12 @@ footer #start .start-icon button i{
         position: relative;
         margin-left: -100px;
     }
+    .flex{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 
     #modal1 .modal-content .content,
     #modal2 .modal-content2 .content2, 
@@ -987,6 +1004,13 @@ footer #start .start-icon button i{
         flex-direction: column;
         gap: 2rem;
 
+    }
+    #modal5{
+        width: 100%;
+    }
+    #modal5 #modal-content5{
+        width: 100%;
+        max-width: 400px;
     }
     .grid-container{
         width: 100%;
@@ -1008,6 +1032,25 @@ footer #start .start-icon button i{
     .grid-container section .directory h2{
         font-size: 10px;
     }
+    #browser-container{
+        width: 320px;
+        max-width: 320px;
+        height: 90vh;
+        position: absolute;
+        margin-left: 27%;
+        top: -11%;
+        overflow: hidden;
+        padding: 0 0 2rem 0;
+    }
+    #browser-container, #player-container {
+        width: 85%;
+        max-width: 300px;
+        height: 80vh;
+        position: absolute;
+        overflow: hidden;
+        padding: 0 0 2rem 0;
+    }
+
     footer{
         width: 100vw;
     }
@@ -1024,11 +1067,7 @@ footer #start .start-icon button i{
         padding: 0 10px;
 
     }
-    #browser-container{
-        width: 200%;
-        height: 160%;
-        overflow: hidden;
-    }
+    
     .refresh,
     #counter-div{
         font-size: 1rem;
@@ -1044,15 +1083,17 @@ footer #start .start-icon button i{
         position: relative;
         z-index: 1;
         right: 0%;
-        top: -42%;
-        bottom: 20%;
+        top: 2%;
+        display: none;
+
         width: 100vw;
-        height: 91.5%;
+        height: 250px;
         border: 1px solid black;
     }
     
     #start-container {
         width: 100%;
+        max-width: 150px;
         height: 15%;
         position: absolute;
         display: flex;
@@ -1060,7 +1101,7 @@ footer #start .start-icon button i{
         align-items: center;
         flex-direction: row;
         bottom: 0;
-        right: -10%;
+        right: 0;
     }
     #start-container button{
         width: 40px;
@@ -1078,12 +1119,34 @@ footer #start .start-icon button i{
     .box-others .box span{
         font-size: 10px;
     }
-    #power-options div{
-        font-size: 1.5rem;
+    #power-options div i{
+        margin: 10px;
+    }
+    
+    #power-options div {
+        width: 100%;
+        font-size: 1rem;
+        left: 0;
+        top: 25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #black-screen{
+        position: fixed;
+    }
+    #loader{
+        margin: 0 auto;
     }
     footer{
         height: 10%;
         padding: 5px 0 0 0;
+    }
+    #loader {
+        margin: 0 auto;
+        position: absolute;
+        top: 30%;
+        left: 15rem;
     }
 }
 @media only screen and (min-width: 768px) {
@@ -1091,13 +1154,18 @@ footer #start .start-icon button i{
         background-size: auto;
 
     }
+    #modal{
+        width: 100%;
+    }
     #modal5 .modal-content5{
         background-color: white;
-
+        height: 370px;
+        width: 100%;
     }
     #modal5 .modal-content5 .content5{
         overflow: auto;
-        height: 90%;
+        height: 100%;
+        width: 100%;
 
     }
     #browser-container{
@@ -1109,14 +1177,30 @@ footer #start .start-icon button i{
     .refresh p{
         margin-bottom: 10px;
     }
+    #start-tab {
+        position: absolute;
+        z-index: 1;
+        left: 0%;
+        bottom: 10%;
+        display: none;
+        width: 100vw;
+        height: 300px;
+        border: 1px solid black;
+    }
+    .box-others .box{
+        width: 80px;
+        height: 90px;
+        font-size: 15px;
+    }
 
-    #start-tab{
+    /* #start-tab{
         height: 100%;
         max-height: 350px;
         display: flex;
         align-items: center;
         justify-content: center;
-    }
+    } */
+    
     #start-container{
         height: 100%;
         display: flex;
