@@ -996,9 +996,9 @@ footer #start .start-icon button i{
     }
 }
 
-@media only screen and (max-width: 425px) and (height: 705px) {
+@media only screen and (max-width: 425px) and (max-height: 892px) {
     #start-tab{
-        bottom:-15.5% !important;
+        bottom:-18% !important;
     }
 }
 @media only screen and (max-width: 425px) {
