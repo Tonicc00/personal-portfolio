@@ -1070,6 +1070,7 @@ footer #start .start-icon button i{
 
     footer{
         width: 100vw;
+        height: 55px;
     }
     .start-icon{
         margin: 0 10px;
@@ -1100,7 +1101,7 @@ footer #start .start-icon button i{
         position: relative;
         z-index: 1;
         right: 0%;
-        top: 2%;
+        bottom: -2%;
         display: none;
 
         width: 100vw;
