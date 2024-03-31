@@ -196,12 +196,16 @@ const getDinoGame = () => {
             // counterDiv.textContent = `You lost! Press space to play again.`;
         }
     }, 10);
-    document.addEventListener('keydown', 'touchstart', (e) => {
+    document.addEventListener('keydown', (e) => {
         if(e.key == " " || e.code == "space"){
             cactus.style.animationPlayState = 'running';
             jump();
         }
-    });    
+    });
+    document.ontouchstart = () => {
+        cactus.style.animationPlayState = 'running';
+        jump();
+    }
 }
 
 const browser = document.getElementById('browser-container');
