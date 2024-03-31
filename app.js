@@ -196,7 +196,7 @@ const getDinoGame = () => {
             // counterDiv.textContent = `You lost! Press space to play again.`;
         }
     }, 10);
-    document.addEventListener('keydown', (e) => {
+    document.addEventListener('keydown', 'touchstart', (e) => {
         if(e.key == " " || e.code == "space"){
             cactus.style.animationPlayState = 'running';
             jump();
