@@ -27,7 +27,7 @@ Hope you will have a great time exploring the site.
 
 ### FreeCodeCamp
 
-This folder contains some exercises used in freeCodeCamp to teach their students syntax and get them familiar with writing code. It has practical approach to coding as well as great way of explaining theory combined with examples.
+This folder contains some exercises used in freeCodeCamp curriculum to teach their students syntax and get them familiar with writing code. It has practical approach to coding as well as great way of explaining theory combined with examples.
 
 ### FrontEnd Mentor
 
@@ -39,11 +39,11 @@ Here I listed few of the my best projects.
 
 React paired with JavaScript is a really fun tool to use as it simplifies the process tremendously. 
 
-Restaurant landing page project is one I am most proud of as it was my first bigger project with react + successfully integrated recepies API and displayed data on UI.
+Restaurant landing page project is the one I am most proud of as it was my first bigger react project + successfully integrated recepies API and displayed data on UI.
 
 ### Windows
 
-Windows button allows user to display windows tab and an option to shut down the portfolio. 
+Windows button allows user to display windows tab and an option to "shut down" the portfolio. 
 
 ### Browser
 
